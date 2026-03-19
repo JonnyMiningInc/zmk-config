@@ -52,122 +52,22 @@
         };
     };
 
-    macros {
-        browsertab: browsertab {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings =
-                <&macro_press>,
-                <&kp LCTRL>,
-                <&macro_tap>,
-                <&kp TAB>,
-                <&macro_release>,
-                <&kp LCTRL>;
-        };
-
-    };
-
     combos {
         compatible = "zmk,combos";
 
+        right_alt {
+            bindings = <&kp RIGHT_ALT>;
+            key-positions = <14 21>;
+        };
+
         escape {
             bindings = <&kp ESCAPE>;
-            key-positions = <13 29>;
+            key-positions = <17 18>;
         };
 
-        delete {
-            bindings = <&kp DELETE>;
-            key-positions = <15 21>;
-        };
-
-        perc {
-            bindings = <&kp PERCENT>;
-            key-positions = <5 17>;
-            layers = <0>;
-        };
-
-        equal {
-            bindings = <&kp EQUAL>;
-            key-positions = <28 16>;
-            layers = <0>;
-        };
-
-        dollar {
-            bindings = <&kp DOLLAR>;
-            key-positions = <4 16>;
-            layers = <0>;
-        };
-
-        pound {
-            bindings = <&kp POUND>;
-            key-positions = <3 15>;
-            layers = <0>;
-        };
-
-        at {
-            bindings = <&kp AT>;
-            key-positions = <2 14>;
-            layers = <0>;
-        };
-
-        backslash {
-            bindings = <&kp BACKSLASH>;
-            key-positions = <26 14>;
-            layers = <0>;
-        };
-
-        star {
-            bindings = <&kp STAR>;
-            key-positions = <8 20>;
-            layers = <0>;
-        };
-
-        slash {
-            bindings = <&kp SLASH>;
-            key-positions = <32 20>;
-            layers = <0>;
-        };
-
-        plus {
-            bindings = <&kp PLUS>;
-            key-positions = <7 19>;
-            layers = <0>;
-        };
-
-        minus {
-            bindings = <&kp KP_MINUS>;
-            key-positions = <31 19>;
-            layers = <0>;
-        };
-
-        underscore {
-            bindings = <&kp UNDER>;
-            key-positions = <30 18>;
-            layers = <0>;
-        };
-
-        leftbrack {
-            bindings = <&kp LEFT_BRACKET>;
-            key-positions = <31 32>;
-            layers = <0>;
-        };
-
-        rightbrack {
-            bindings = <&kp RIGHT_BRACKET>;
-            key-positions = <33 32>;
-            layers = <0>;
-        };
-
-        para-less {
-            bindings = <&paraless>;
-            key-positions = <20 19>;
-            layers = <0>;
-        };
-
-        para-great {
-            bindings = <&paragreat>;
-            key-positions = <20 21>;
-            layers = <0>;
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 19>;
         };
     };
 
@@ -176,7 +76,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        DEF {
+        BASE {
             display-name = "Base";
 
             // -----------------------------------------------------------------------------------------
@@ -186,14 +86,14 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&kp TAB    &kp Q  &kp W  &kp E     &kp R  &kp T        &kp Y    &kp U      &kp I          &kp O    &kp P     &kp BACKSPACE
-&kp LSHFT  &kp A  &kp S  &kp D     &kp F  &kp G        &kp H    &kp J      &kp K          &kp L    &kp SEMI  &kp SQT
-&kp LCTRL  &kp Z  &kp X  &kp C     &kp V  &kp B        &kp N    &kp M      &kp COMMA      &kp DOT  &kp FSLH  &mo 4
-                         &kp LGUI  &mo 1  &kp SPACE    &kp RET  &lt 2 TAB  &kp LEFT_ALT
+&kp TAB    &kp DE_Q           &kp DE_W           &kp DE_E               &hm HOME DE_R  &hm END DE_T    &kp DE_Z      &kp DE_U  &kp DE_I               &kp DE_O           &kp DE_P               &kp BACKSPACE
+&kp LSHFT  &hm LEFT_WIN DE_A  &hm LEFT_ALT DE_S  &hm LEFT_CONTROL DE_D  &kp DE_F       &kp DE_G        &kp DE_H      &kp DE_J  &hm LEFT_CONTROL DE_K  &hm LEFT_ALT DE_L  &hm LEFT_WIN DE_MINUS  &kp LEFT_SHIFT
+&to 0      &kp DE_Y           &kp DE_X           &kp DE_C               &kp DE_V       &kp DE_B        &kp DE_N      &kp DE_M  &kp DE_COMMA           &kp DE_PERIOD      &kp DE_EXCLAMATION     &to 0
+                                                 &to 3                  &mo 1          &kp DE_SPACE    &kp DE_SPACE  &to 2     &to 4
             >;
         };
 
-        NAV {
+        NUM {
             display-name = "NavNum";
 
             // -----------------------------------------------------------------------------------------
@@ -203,49 +103,47 @@
             // | GUI | CTRL | SHFT | LWR | SPC |   | ENT | RSE  | BKSP | ALT | ESC |
 
             bindings = <
-&trans  &kp N1  &kp N2    &kp N3       &kp N4           &kp N5           &kp N6   &kp N7        &kp N8        &kp N9        &kp N0  &trans
-&caps_word  &trans  &trans    &kp UP_ARROW  &browsertab      &kp PAGE_UP      &kp N0   &kp N4  &kp N5        &kp N6  &trans  &trans
-&trans  &trans  &kp LEFT  &kp DOWN      &kp RIGHT_ARROW  &kp PAGE_DOWN    &trans   &kp N1  &kp N2  &kp N3  &trans  &trans
-                          &kp LGUI      &trans           &kp SPACE        &kp RET  &mo 3        &trans
+&kp TAB         &kp DE_N1    &kp DE_N2     &kp DE_N3        &kp DE_N4     &kp DE_N5         &kp DE_N6     &kp DE_N7  &kp DE_N8  &kp DE_N9  &kp DE_N0      &kp BACKSPACE
+&kp LEFT_SHIFT  &kp DE_PLUS  &kp DE_MINUS  &kp DE_ASTERISK  &kp DE_SLASH  &kp DE_PERCENT    &kp DE_N0     &kp DE_N4  &kp DE_N5  &kp DE_N6  &kp DE_SQUARE  &kp LEFT_SHIFT
+&to 0           &none        &none         &none            &none         &none             &kp DE_EQUAL  &kp DE_N1  &kp DE_N2  &kp DE_N3  &kp DE_SUPER3  &to 0
+                                           &to 3            &to 1         &kp DE_SPACE      &kp DE_SPACE  &to 2      &to 4
             >;
         };
 
         SYM {
-            display-name = "Symbols";
-
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  !  |  @  |  #  |  $  |  %  |   |  ^  |  &  |  *  |  (  |  )  | BKSP |
-            // | CTRL |     |     |     |     |     |   |  -  |  =  |  [  |  ]  |  \  |  `   |
-            // | SHFT |     |     |     |     |     |   |  _  |  +  |  {  |  }  | "|" |  ~   |
-            //                    | GUI |     | SPC |   | ENT |     | ALT |
-
             bindings = <
-&trans  &kp EXCL  &kp AT          &kp HASH        &kp DLLR         &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LEFT_PARENTHESIS  &kp RPAR  &trans
-&trans  &trans    &trans          &kp UP_ARROW    &trans           &kp GRAVE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT              &kp BSLH  &trans
-&trans  &trans    &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp TILDE    &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC              &kp PIPE  &trans
-                                  &kp LGUI        &mo 3           &kp SPACE    &kp RET    &trans     &trans
+&kp TAB         &kp DE_CARET          &kp DE_DEGREE        &none             &none                &none           &none         &none             &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &kp DE_SECTION  &kp BACKSPACE
+&kp LEFT_SHIFT  &kp DE_DOUBLE_QUOTES  &kp DE_SINGLE_QUOTE  &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &none           &kp DE_PIPE   &kp DE_SLASH      &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE        &none           &kp LEFT_SHIFT
+&to 0           &kp DE_EURO           &kp DE_DOLLAR        &kp DE_AT         &kp DE_HASH          &kp DE_TILDE    &none         &kp DE_BACKSLASH  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &none           &to 0
+                                                           &to 3             &to 1                &kp DE_SPACE    &kp DE_SPACE  &to 2             &to 4
             >;
         };
 
-        ADJ {
-            display-name = "System";
+        GERMAN {
             bindings = <
-&trans  &kp F1        &kp F2        &kp F3        &kp F4      &kp F5            &kp F6  &kp F7  &kp F8  &kp F9  &kp F10      &trans
-&trans  &kp F11       &kp F12       &trans        &trans      &studio_unlock            &trans  &trans  &trans  &trans  &trans       &trans
-&trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &bt BT_CLR_ALL    &trans  &trans  &trans  &trans  &bootloader  &trans
-                                    &trans        &trans      &trans            &trans  &trans  &trans
+&kp TAB         &none  &none  &none  &none  &none    &none  &none            &none            &none            &none      &kp BACKSPACE
+&kp LEFT_SHIFT  &none  &none  &none  &none  &none    &none  &kp DE_O_UMLAUT  &kp DE_A_UMLAUT  &kp DE_U_UMLAUT  &kp DE_SZ  &kp LEFT_SHIFT
+&to 0           &none  &none  &none  &none  &none    &mo 5  &none            &none            &none            &none      &to 0
+                              &to 3  &to 1  &none    &none  &to 2            &to 4
             >;
         };
-        EXTRA {
-                display-name = "Extra";
+
+        MOVE {
             bindings = <
-&trans  &trans       &trans         &trans          &trans      &msc SCRL_UP    &trans  &trans  &trans  &trans  &trans      &trans
-&trans  &trans       &trans        &mmv MOVE_UP      &trans   &msc SCRL_DOWN            &trans  &mkp LCLK  &mkp RCLK  &trans  &trans       &trans
-&trans  &trans       &mmv MOVE_LEFT   &mmv MOVE_DOWN  &mmv MOVE_RIGHT  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                                     &trans        &trans      &trans            &trans  &trans  &trans
+&kp F1  &kp F2  &kp F3          &kp F4          &kp F5           &kp F6           &kp F7        &kp F8     &kp F9          &kp F10    &kp F11  &kp F12
+&none   &none   &none           &kp UP_ARROW    &none            &kp PAGE_UP      &none         &none      &msc SCRL_UP    &none      &none    &none
+&to 0   &none   &kp LEFT_ARROW  &kp DOWN_ARROW  &kp RIGHT_ARROW  &kp PAGE_DOWN    &none         &mkp LCLK  &msc SCRL_DOWN  &mkp RCLK  &none    &to 0
+                                &to 3           &to 1            &kp DE_SPACE     &kp DE_SPACE  &to 2      &to 4
+            >;
+        };
+
+        bluetooth {
+            bindings = <
+&none  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
+&none  &bt BT_NXT    &bt BT_PRV    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &none  &none  &none  &none  &none  &none
+&none  &bt BT_SEL 3  &bt BT_SEL 4  &none         &none         &none           &none  &none  &none  &none  &none  &none
+                                   &none         &none         &none           &none  &none  &none
             >;
         };
     };
-
 };
-    
