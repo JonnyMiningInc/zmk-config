@@ -3,6 +3,27 @@
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/pointing.h>
 #include "keys_de.h"
+#include <behaviors/key_override.dtsi>
+ 
+/ {
+    key_overrides {
+        compatible = "zmk,key-overrides";
+ 
+        // Shift + ! → ?
+        excl_to_qmark: excl_to_qmark {
+            compatible = "zmk,key-override";
+            key = <LSFT EXCLAMATION>;   // Shift + !
+            replacement = <QUESTION>;   // gibt ? aus
+            layers = <0>;               // auf welchem Layer
+        };
+    };
+ 
+    keymap {
+        ...
+        // Die Taste selbst einfach auf ! setzen:
+        bindings = <... &kp EXCLAMATION ...>;
+    };
+};
 
 #define DEF 0
 #define NAV 1
