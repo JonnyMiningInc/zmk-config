@@ -12,6 +12,13 @@
 
 / {
     behaviors {
+        excl_qmark: exclamation_question {
+            compatible = "zmk,behavior-mod-morph";
+            #binding-cells = <0>;
+            bindings = <&kp DE_EXCL>, <&kp DE_QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
