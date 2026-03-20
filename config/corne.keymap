@@ -16,6 +16,7 @@
             compatible = "zmk,behavior-mod-morph";
             #binding-cells = <0>;
             bindings = <&kp DE_EXCL>, <&kp DE_QMARK>;
+
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -85,8 +86,8 @@
             bindings = <
 &kp ESCAPE      &kp DE_Q           &kp DE_W           &kp DE_E               &hm HOME DE_R  &hm END DE_T    &kp DE_Z      &kp DE_U  &kp DE_I               &kp DE_O           &kp DE_P               &kp BACKSPACE
 &kp TAB         &hm LEFT_WIN DE_A  &hm LEFT_ALT DE_S  &hm LEFT_CONTROL DE_D  &kp DE_F       &kp DE_G        &kp DE_H      &kp DE_J  &hm LEFT_CONTROL DE_K  &hm LEFT_ALT DE_L  &hm LEFT_WIN DE_MINUS  &kp ENTER
-&kp LEFT_SHIFT  &kp DE_Y           &kp DE_X           &kp DE_C               &kp DE_V       &kp DE_B        &kp DE_N      &kp DE_M  &kp DE_COMMA           &kp DE_PERIOD      &excl_qmark    &kp LEFT_SHIFT
-                                                      &mo 3                  &mo 1          &kp DE_SPACE    &kp KP_ENTER  &to 2     &to 4
+&kp LEFT_SHIFT  &kp DE_Y           &kp DE_X           &kp DE_C               &kp DE_V       &kp DE_B        &kp DE_N      &kp DE_M  &kp DE_COMMA           &kp DE_PERIOD      &excl_qmark            &kp LEFT_SHIFT
+                                                      &mo 3                  &mo 1          &kp DE_SPACE    &kp DE_SPACE  &to 2     &to 4
             >;
         };
 
