@@ -127,7 +127,7 @@
 
         SYM {
             bindings = <
-&kp ESCAPE      &kp DE_CARET          &kp DE_DEGREE        &kp DE_SECTION    &none                &none               &none         &none             &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &none  &kp BACKSPACE
+&kp ESCAPE      &kp DE_CARET          &kp DE_DEGREE        &kp DE_SECTION    &kp DE_GRAVE         &none               &none         &none             &kp DE_LEFT_PARENTHESIS  &kp DE_RIGHT_PARENTHESIS  &none  &kp BACKSPACE
 &kp TAB         &kp DE_DOUBLE_QUOTES  &kp DE_SINGLE_QUOTE  &kp DE_LESS_THAN  &kp DE_GREATER_THAN  &kp DE_AMPERSAND    &kp DE_PIPE   &kp DE_SLASH      &kp DE_LEFT_BRACE        &kp DE_RIGHT_BRACE        &none  &kp ENTER
 &kp LEFT_SHIFT  &kp DE_EURO           &kp DE_DOLLAR        &kp DE_AT         &kp DE_HASH          &kp DE_TILDE        &none         &kp DE_BACKSLASH  &kp DE_LEFT_BRACKET      &kp DE_RIGHT_BRACKET      &none  &kp RIGHT_SHIFT
                                                            &mo 3             &mo 1                &kp DE_SPACE        &kp DE_SPACE  &to 0             &mo 4
