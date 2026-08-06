@@ -161,7 +161,7 @@
             >;
         };
 
-        layer_6 {
+        GAMING {
             display-name = "Base";
             bindings = <
 &kp ESCAPE        &kp DE_Q  &kp DE_W  &kp DE_E  &kp DE_R  &kp DE_T        &kp DE_Z      &kp DE_U      &kp DE_I      &kp DE_O       &kp DE_P            &kp BACKSPACE
@@ -171,7 +171,7 @@
             >;
         };
 
-        layer_7 {
+        GAMENUM {
             bindings = <
 &none      &none      &kp DE_N2  &kp DE_N3  &kp DE_N4  &none    &none  &none  &none  &none  &none  &none
 &kp DE_N1  &kp DE_N5  &kp DE_N6  &kp DE_N7  &kp DE_N8  &none    &none  &none  &none  &none  &none  &none
