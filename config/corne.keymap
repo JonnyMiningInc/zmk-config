@@ -152,7 +152,7 @@
             >;
         };
 
-        bluetooth {
+        BLUETOOTH {
             bindings = <
 &to 6  &none         &none         &none         &none         &none           &none  &none  &none  &none  &none  &none
 &none  &bt BT_NXT    &bt BT_PRV    &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2    &none  &none  &none  &none  &none  &none
@@ -162,7 +162,7 @@
         };
 
         GAMING {
-            display-name = "Base";
+            display-name = "gaming";
             bindings = <
 &kp ESCAPE        &kp DE_Q  &kp DE_W  &kp DE_E  &kp DE_R  &kp DE_T        &kp DE_Z      &kp DE_U      &kp DE_I      &kp DE_O       &kp DE_P            &kp BACKSPACE
 &kp LEFT_SHIFT    &kp DE_A  &kp DE_S  &kp DE_D  &kp DE_F  &kp DE_G        &kp DE_H      &kp DE_J      &kp DE_K      &kp DE_L       &kp DE_MINUS        &kp ENTER
